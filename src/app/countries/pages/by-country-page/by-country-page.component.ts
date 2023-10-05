@@ -16,7 +16,7 @@ export class ByCountryPageComponent {
 
   searchByCountry( query: string ): void {
 
-    this.countriesService.searchFrom({query, endpoint: 'name'})
+    this.countriesService.searchBy({query, endpoint: 'name'})
       .subscribe(countries => {
         this.countries = countries;
       })

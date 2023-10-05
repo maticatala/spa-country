@@ -8,17 +8,18 @@ import { Country } from '../../interfaces/country.interface';
   styles: [
   ]
 })
-export class ByRegionPageComponent {
+export class ByRegionPageComponent{
 
   public countries: Country[] = [];
+  public regions: string[] = ['Asia', 'Americas', 'Africa', 'Antarctic', 'Europe', 'Oceania'];
 
   constructor(private countriesService: CountriesService) {
   }
 
   searchByRegion( query: string ): void{
 
-    this.countriesService.searchFrom({ query, endpoint: 'region' })
-      .subscribe(countries => {
+    this.countriesService.searchBy({ query, endpoint: 'region' })
+      .subscribe((countries:Country[]) => {
         this.countries = countries;
       });
 

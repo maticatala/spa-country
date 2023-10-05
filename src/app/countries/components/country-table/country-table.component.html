@@ -13,6 +13,7 @@
         <th>Nombre</th>
         <th>Capital</th>
         <th>Población</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -32,6 +33,9 @@
         </td>
         <td>
           {{country.population | number}}
+        </td>
+        <td>
+          <a [routerLink]="['/countries/by', country.cca3]" class="btn btn-primary">Info</a>
         </td>
       </tr>
     </tbody>

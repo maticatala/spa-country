@@ -17,7 +17,7 @@ export class ByCaptialPageComponent {
 
   searchByCaptial(query: string): void {
 
-    this.countriesService.searchFrom({query, endpoint: 'capital'})
+    this.countriesService.searchBy({query, endpoint: 'capital'})
       .subscribe(countries => {
         this.countries = countries;
       })
